@@ -1,34 +1,65 @@
-#CRUZ CANELA EUNICE
-Age= []
 def main():
-    print("¡Hola! Elige una opción:\n\
-             1. Crear Protocolo\n\
-             2. Mostrar protocolo\n\
-             3. Agregar un paso al final de la lista\n\
-             4. Añadir un paso en alguna posición indicada\n\
-             5. Borrar algún paso\n\
-             6. Salir")
+    print ("Escribe la opción que deseas realiza\n\
+            0.Crear archivo\n\
+            1. Escribir protocolo\n\
+            2. Agregar paso\n\
+            3. Mostrar protocolo\n\
+            4. Borrar un paso \n\
+            5. Salir")
+           
 while True:
     main()
-    opc = int(input( "Elige una opcion para continuar (escribe el número): " ))    
-    if opc == 1:
-        num = int (input ("Escribe el número de pasos"))
-        for _ in range(num):
-            paso = input ("Escribe el protocolo: ")
-    elif opc==2:
-        print ("El protocolo es: "+ str (paso))
-    elif opc == 3:
-       paso = print("Escribe el nuevo paso: ")
-    elif opc ==4:
-        paso=print ("Escribe el paso:")
-        pos = int (input("Esribe la posición (recuerda que la primera posición es 0): "))
-        paso.insert (pos, paso)
-        print("Se añadieron los datos en la posición indicada")
+    opc = int (input ("Elige una opción para continuar (escribe el número): "))
+    if opc==0:
+        def crearArchivo():
+            archivo = open ("protocolo.txt", "w")
+            archivo.close
+        crearArchivo()
+        print ("Se ha creado el archivo")
+    elif opc==1:
+        num=int (input ("Escribir numero de pasos: "))
+        for _ in range (num):         
+            def EscribirArchivo():
+                archivo=open("protocolo.txt","a")
+                cadena=input("Escribe pasos")
+                archivo.write(cadena+"\n")
+                archivo.close
+            EscribirArchivo()
+        print ("Se creó la archivo ")
+    elif opc == 2:
+        def EscribirArchivo():  
+            archivo=open("protocolo.txt","a")
+            cadena=input("Escribe el paso que deseas agregar")
+            archivo.write(cadena+"\n")
+            archivo.close    
+        EscribirArchivo()
+        print ("Se agregó el paso")
+    elif opc==3:
+        def LeerArchivo():
+            archivo = open ("protocolo.txt", "r")
+            linea = archivo.readline()
+            while (linea):
+                print (linea)
+                linea = archivo.readline()
+            archivo.close()
+        LeerArchivo()
+        input ()
+    elif opc==4:
+        def borrar():                      
+            archivo = open ("protocolo.txt", "r")
+            linea = archivo.readline()
+            while (linea):
+                print (linea)
+                linea = archivo.readline()
+            archivo.close()
+            
+            archivo = open("protocolo.txt", "w")
+            
+            pos=int(input ("Numero"))
+            linea = 
+            pos.remove(linea)
+        borrar()
     elif opc == 5:
-        print(paso)
-        bor= int(input ("Escribela posición del dato que deseas borrar(recuerda que la primera posición es 0): "))
-        paso.pop(bor)
-    elif opc == 8:
         print ("Hasta luego :]")
         break
 else:
